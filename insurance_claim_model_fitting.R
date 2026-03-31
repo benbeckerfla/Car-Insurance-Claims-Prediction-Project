@@ -14,8 +14,6 @@ library(splines)
 library(caret)
 library(MASS)
 library(pROC)
-library(car)
-library(dplyr)
 library(ggplot2)
 
 
