@@ -369,7 +369,7 @@ logit_1 <- glm(claim_flag ~ children_driving + bs(age, knots = c(49, 54), bounda
 vif(logit_1)
 summary(logit_1)
 
-#Removing occupation and transformed claim amount to eliminate multicollinearity
+#Removing transformed claim amount to eliminate multicollinearity
 logit_2 <- glm(claim_flag ~ children_driving + bs(age, knots = c(49, 54), boundary.knots = c(15, 85), degree = 1) + children + years_on_job + 
                  income + single_parent + home_value + marrital_status + gender + education + occupation
                  commute_time + car_use + car_value + policy_tenure + car_type +
