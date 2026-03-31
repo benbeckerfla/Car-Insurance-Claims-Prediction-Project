@@ -371,7 +371,7 @@ summary(logit_1)
 
 #Removing occupation and transformed claim amount to eliminate multicollinearity
 logit_2 <- glm(claim_flag ~ children_driving + bs(age, knots = c(49, 54), boundary.knots = c(15, 85), degree = 1) + children + years_on_job + 
-                 income + single_parent + home_value + marrital_status + gender + education + 
+                 income + single_parent + home_value + marrital_status + gender + education + occupation
                  commute_time + car_use + car_value + policy_tenure + car_type +
                  red_car + number_claims_transformed + 
                  revoked_license + license_points + car_age + urbanicity,
@@ -427,7 +427,7 @@ for (k in 1:K) {
   # 3. Fit model on imputed training data
   fit <- with(impute_train,
               glm(claim_flag ~ children_driving + bs(age, knots = c(49, 54), boundary.knots = c(15, 85), degree = 1) + years_on_job + 
-                    income + single_parent + home_value + marrital_status + education + 
+                    income + single_parent + home_value + marrital_status + education + occupation
                     commute_time + car_use + car_value + policy_tenure + car_type +
                     number_claims_transformed + revoked_license + license_points + urbanicity,
                   family = binomial,
